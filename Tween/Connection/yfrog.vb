@@ -35,12 +35,12 @@ Public Class yfrog
     '''<summary>
     '''OAuthのコンシューマー鍵
     '''</summary>
-    Private Const ConsumerKey As String = "tLbG3uS0BIIE8jm1mKzKOfZ6EgUOmWVM"
+    'Private Const ConsumerKey As String = "tLbG3uS0BIIE8jm1mKzKOfZ6EgUOmWVM"
 
     '''<summary>
     '''OAuthの署名作成用秘密コンシューマーデータ
     '''</summary>
-    Private Const ConsumerSecretKey As String = "M0IMsbl2722iWa+CGPVcNeQmE+TFpJk8B/KW9UUTk3eLOl9Ij005r52JNxVukTzM"
+    'Private Const ConsumerSecretKey As String = "M0IMsbl2722iWa+CGPVcNeQmE+TFpJk8B/KW9UUTk3eLOl9Ij005r52JNxVukTzM"
 
     Private Const ApiKey As String = "03HJKOWY93b7d7b7a5fa015890f8259cf939e144"
     Private pictureExt() As String = {".jpg", _
@@ -162,7 +162,7 @@ Public Class yfrog
         MyBase.New(New Uri("http://api.twitter.com/"), _
                    New Uri("https://api.twitter.com/1/account/verify_credentials.xml"))
         tw = twitter
-        Initialize(DecryptString(ConsumerKey), DecryptString(ConsumerSecretKey), tw.AccessToken, tw.AccessTokenSecret, "", "")
+        Initialize(My.Resources.ConsumerKey, My.Resources.ConsumerKeySecret, tw.AccessToken, tw.AccessTokenSecret, "", "")
     End Sub
 
     Public Function Configuration(key As String, value As Object) As Boolean Implements IMultimediaShareService.Configuration

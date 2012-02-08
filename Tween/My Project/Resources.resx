@@ -1132,4 +1132,10 @@
   <data name="ApiInfo91" xml:space="preserve">
     <value>（画像投稿後に取得/更新されます）</value>
   </data>
+  <data name="ConsumerKey" xml:space="preserve">
+    <value>cQdJ8rClakcfhZgPGag</value>
+  </data>
+  <data name="ConsumerKeySecret" xml:space="preserve">
+    <value>i05vzr2620OfmDTTggK3xw6CsGAq9b4M0BhoTm086Y</value>
+  </data>
 </root>
