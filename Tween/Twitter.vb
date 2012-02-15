@@ -117,6 +117,7 @@ Public Class Twitter
     Public Event UserIdChanged()
 
     Friend keitaiWeb As New KeitaiWeb()
+    Private oldPosts(10) As String
 
     'Private _deletemessages As New List(Of PostClass)
 
@@ -456,6 +457,8 @@ Public Class Twitter
                 _statusesCount = status.User.StatusesCount
                 _location = status.User.Location
                 _bio = status.User.Description
+
+
 
                 If IsPostRestricted(status) Then
                     Return "OK:Delaying?"

@@ -1997,7 +1997,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  一度にRetweetできるのは15件までです に類似しているローカライズされた文字列を検索します。
+        '''  一度にRetweetできるのは50件までです に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property RetweetLimitText() As String
             Get
@@ -2724,7 +2724,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  このファイルの内容を kiri_feather@users.sourceforge.jp まで送っていただけると助かります。 に類似しているローカライズされた文字列を検索します。
+        '''  このファイルの内容を contact@re4k.dip.jp まで送っていただけると助かります。 に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property TraceOutText1() As String
             Get
@@ -2733,7 +2733,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  ご面倒なら@kiri_featherまでお知らせ頂くだけでも助かります。 に類似しているローカライズされた文字列を検索します。
+        '''  ご面倒なら@re4kまでお知らせ頂くだけでも助かります。 に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property TraceOutText2() As String
             Get
@@ -2859,7 +2859,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  このファイルの内容を kiri_feather@users.sourceforge.jp まで送っていただけると助かります。 に類似しているローカライズされた文字列を検索します。
+        '''  このファイルの内容を contact@re4k.dip.jp まで送っていただけると助かります。 に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property UnhandledExceptionText2() As String
             Get
@@ -2868,7 +2868,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  ご面倒なら@kiri_featherまでお知らせ頂くだけでも助かります。 に類似しているローカライズされた文字列を検索します。
+        '''  ご面倒なら@re4kまでお知らせ頂くだけでも助かります。 に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property UnhandledExceptionText3() As String
             Get
@@ -2922,7 +2922,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  エラーが発生しました。ごめんなさい。ログをexeファイルのある場所に {0} として作ったので、kiri_feather@users.sourceforge.jpまで送っていただけると助かります。{1}ご面倒なら@kiri_featherまでお知らせ頂くだけでも助かります。{1}「はい」ボタンをクリックするとログを開きます。ログを開かない場合は「いいえ」、このまま終了する場合は「キャンセル」ボタンをクリックしてください。 に類似しているローカライズされた文字列を検索します。
+        '''  エラーが発生しました。ごめんなさい。ログをexeファイルのある場所に {0} として作ったので、contact@re4k.dip.jpまで送っていただけると助かります。{1}ご面倒なら@kiri_featherまでお知らせ頂くだけでも助かります。{1}「はい」ボタンをクリックするとログを開きます。ログを開かない場合は「いいえ」、このまま終了する場合は「キャンセル」ボタンをクリックしてください。 に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property UnhandledExceptionText9() As String
             Get

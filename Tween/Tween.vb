@@ -2763,17 +2763,11 @@ Public Class TweenMain
         If _statuses.Tabs(_curTab.Text).TabType = TabUsageType.DirectMessage OrElse _curList.SelectedIndices.Count = 0 _
             OrElse Not Me.ExistCurrentPost Then Exit Sub
 
-        '複数fav確認msg
-        If _curList.SelectedIndices.Count > 250 AndAlso FavAdd Then
-            MessageBox.Show(My.Resources.FavoriteLimitCountText)
-            _DoFavRetweetFlags = False
-            Exit Sub
-        ElseIf multiFavoriteChangeDialogEnable AndAlso _curList.SelectedIndices.Count > 1 Then
+        If multiFavoriteChangeDialogEnable AndAlso _curList.SelectedIndices.Count > 15 Then
             If FavAdd Then
                 Dim QuestionText As String = My.Resources.FavAddToolStripMenuItem_ClickText1
                 If _DoFavRetweetFlags Then QuestionText = My.Resources.FavoriteRetweetQuestionText3
-                If MessageBox.Show(QuestionText, My.Resources.FavAddToolStripMenuItem_ClickText2, _
-                                   MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Cancel Then
+                If MessageBox.Show(QuestionText, "Tween", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
                     _DoFavRetweetFlags = False
                     Exit Sub
                 End If
@@ -8886,19 +8880,10 @@ RETRY:
                 Exit Sub
             End If
             If _curList.SelectedIndices.Count > 15 Then
-                MessageBox.Show(My.Resources.RetweetLimitText)
-                _DoFavRetweetFlags = False
-                Exit Sub
-            ElseIf _curList.SelectedIndices.Count > 1 Then
-                Dim QuestionText As String = My.Resources.RetweetQuestion2
-                If _DoFavRetweetFlags Then QuestionText = My.Resources.FavoriteRetweetQuestionText1
-                Select Case MessageBox.Show(QuestionText, "Retweet", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
-                    Case Windows.Forms.DialogResult.Cancel, Windows.Forms.DialogResult.No
-                        _DoFavRetweetFlags = False
-                        Exit Sub
-                End Select
+                _DoFavRetweetFlags = MessageBox.Show(My.Resources.RetweetLimitText, "Tween", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes
+                If _DoFavRetweetFlags = False Then Exit Sub
             Else
-                If _curPost.IsDm OrElse _curPost.IsMe Then
+                If _curPost.IsDm Then
                     _DoFavRetweetFlags = False
                     Exit Sub
                 End If
@@ -8918,7 +8903,7 @@ RETRY:
             args.type = WORKERTYPE.Retweet
             For Each idx As Integer In _curList.SelectedIndices
                 Dim post As PostClass = GetCurTabPost(idx)
-                If Not post.IsMe AndAlso Not post.IsProtect AndAlso Not post.IsDm Then args.ids.Add(post.StatusId)
+                If Not post.IsProtect AndAlso Not post.IsDm Then args.ids.Add(post.StatusId)
             Next
             RunAsync(args)
         End If
